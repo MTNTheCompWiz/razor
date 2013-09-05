@@ -4,7 +4,7 @@
 #
 # Author:: Thomas Mealey (<thomas.mealey@mtnsat.com>)
 #
-# Copyright 2013, MTN Sattelite Communications
+# Copyright 2013, MTN Satellite Communications
 #
 
 require 'safety_razor'
