@@ -478,6 +478,102 @@ usage.
 **Note:** the default for type is `"os"` so this can be omitted in most cases.
 The version attribute can also be a Float.
 
+### <a name="lwrps-model"></a> razor_model
+
+#### <a name="lwrps-model-actions"></a> Actions
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>add</td>
+      <td>Add the model to razor.</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+#### <a name="lwrps-model-attributes"></a> Attributes
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>
+        <b>Label attribute:</b> The logical name to use for the model.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+      <td>image_name</td>
+      <td>
+        The name of the image to be associated with.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+      <td>image_version</td>
+      <td>
+        The version of the image to be associated with.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+      <td>template</td>
+      <td>
+        The template of the model.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+      <td>hostname_prefix</td>
+      <td>
+        The prefix to be associated with nodes created using this model.  A unique number will be appended to this prefix to form the hostname.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+      <td>domainname</td>
+      <td>
+        The host's domain-name.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+    <tr>
+    <td>root_password</td>
+      <td>
+        The root password to be assigned to the host during the provisioning.
+      </td>
+      <td><code>nil</code></td>
+    </tr>
+  </tbody>
+</table>
+
+##### Adding a Model
+    razor_model "web-server" do
+      image_name "precise64"
+      image_version "12.04"
+      template "web_template"
+      hostname_prefix "web_server"
+      domainname "example.com"
+      root_password "super-secret"
+    end
+
+**Node:** Razor has no concept of idempotence.  As a recipe won't know what uuid was assigned to a previously created image, we make the assumption that the image name and image version are going to be unique.  As a result, models require a image_name and image_version to reference the image instead of the uuid.
+
 ## <a name="development"></a> Development
 
 * Source hosted at [GitHub][repo]
