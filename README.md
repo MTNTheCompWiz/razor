@@ -478,6 +478,7 @@ usage.
 **Note:** the default for type is `"os"` so this can be omitted in most cases.
 The version attribute can also be a Float.
 
+<<<<<<< HEAD
 ### <a name="lwrps-model"></a> razor_model
 
 #### <a name="lwrps-model-actions"></a> Actions
@@ -562,6 +563,8 @@ The version attribute can also be a Float.
   </tbody>
 </table>
 
+=======
+>>>>>>> 88048213e3411b705039561c2fd54b8ec75d2dea
 ##### Adding a Model
     razor_model "web-server" do
       image_name "precise64"
