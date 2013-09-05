@@ -478,7 +478,6 @@ usage.
 **Note:** the default for type is `"os"` so this can be omitted in most cases.
 The version attribute can also be a Float.
 
-<<<<<<< HEAD
 ### <a name="lwrps-model"></a> razor_model
 
 #### <a name="lwrps-model-actions"></a> Actions
@@ -563,8 +562,6 @@ The version attribute can also be a Float.
   </tbody>
 </table>
 
-=======
->>>>>>> 88048213e3411b705039561c2fd54b8ec75d2dea
 ##### Adding a Model
     razor_model "web-server" do
       image_name "precise64"
@@ -575,7 +572,7 @@ The version attribute can also be a Float.
       root_password "super-secret"
     end
 
-**Node:** Razor has no concept of idempotence.  As a recipe won't know what uuid was assigned to a previously created image, we make the assumption that the image name and image version are going to be unique.  As a result, models require a image_name and image_version to reference the image instead of the uuid.
+**Note:** Razor has no concept of idempotence.  As a recipe won't know what uuid was assigned to a previously created image, we make the assumption that the image name and image version are going to be unique.  As a result, models require a image_name and image_version to reference the image instead of the uuid.
 
 ## <a name="development"></a> Development
 
