@@ -1,6 +1,7 @@
 #!/usr/bin/env rake
 require 'rake/testtask'
 require 'foodcritic'
+require 'safety_razor'
 
 begin
   require 'emeril/rake'

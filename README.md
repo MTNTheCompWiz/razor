@@ -478,6 +478,18 @@ usage.
 **Note:** the default for type is `"os"` so this can be omitted in most cases.
 The version attribute can also be a Float.
 
+##### Adding a Model
+    razor_model "web-server" do
+      image_name "precise64"
+      image_version "12.04"
+      template "web_template"
+      hostname_prefix "web_server"
+      domainname "example.com"
+      root_password "super-secret"
+    end
+
+**Node:** Razor has no concept of idempotence.  As a recipe won't know what uuid was assigned to a previously created image, we make the assumption that the image name and image version are going to be unique.  As a result, models require a image_name and image_version to reference the image instead of the uuid.
+
 ## <a name="development"></a> Development
 
 * Source hosted at [GitHub][repo]
